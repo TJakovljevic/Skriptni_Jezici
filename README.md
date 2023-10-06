@@ -1,1 +1,1 @@
-# Skriptni_Jezici
+Projekti iz skriptnih jezika.

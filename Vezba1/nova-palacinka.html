@@ -29,10 +29,11 @@
         <h1>Nova palacinka</h1>
         
         <div class = "container mt-3">
-          <form method = "post" action = "http://postman-echo.com/post ">
+          <form method = "post" action = "http://postman-echo.com/post " onsubmit="return validacija()">
+            
             <div class = "mb-3 mt-3">
               <label for = "naziv">Naziv:</label>
-              <input type = "text" class = "form-control" id = "naziv" placeholder = "Unesite naziv" name = "naziv" required>
+              <input type = "text" class = "form-control" id = "naziv" placeholder = "Unesite naziv" name = "naziv" required onkeypress="this.classList.remove('success');this.classList.add('error')">
             </div>
             <div class = "mb-3">
               <label class = "opis">Opis</label>
@@ -44,7 +45,7 @@
                     <label class = "kategorija">Kategorija</label>
                      <select class = "form-select" name = "kategorija" id = "kategorija">
                       <option value = "1">Slatke</option>
-                      <option valie = "2">Slane</option>
+                      <option value = "2">Slane</option>
                      </select>
                   </div>
                 </div>
@@ -55,13 +56,12 @@
                     </div>
                   </div>
                 </div>
-  
-          <div class = "form mt-3">
-            <div class = "form mb-5">
-              <button class = "btn btn-primary">Unesi</button>
-              <a href = "palacinke.html" class = "btn btn-link">Nazad</a>
-            </div>
-          </div>
+                  <div class = "form mt-3">
+                    <div class = "form mb-5">
+                      <button class = "btn btn-primary">Unesi</button>
+                      <a href = "palacinke.html" class = "btn btn-link">Nazad</a>
+                    </div>
+                  </div>
             
             
           </form>
@@ -69,5 +69,21 @@
         </div>
 
     </main>
+
+    <script>
+      function validacija(){
+        var validno = true;
+        if(document.getElementById("naziv").value.length < 3){
+          validno = false;
+          document.getElementById("naziv").classList.add("error");
+          document.getElementById("naziv").classList.remove("success");
+        }else{
+          document.getElementById("naziv").classList.add("success");
+          document.getElementById("naziv").classList.remove("error");
+        }
+
+        return validno;
+      }
+  </script>
 </body>
 </html>

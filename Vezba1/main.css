@@ -9,3 +9,11 @@ main.container{
     
 }
 
+.error{
+    border-color:red;
+}
+
+.success{
+    border-color:green;
+}
+

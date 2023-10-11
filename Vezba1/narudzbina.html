@@ -25,9 +25,37 @@
                 </div>
               </nav>
         </div>
-        <h1>Narudzbina</h1>
+        <h1>Detalji narudzbine</h1>
+      <form method = "post" id = "forma" action = "http://postman-echo.com/post">
+        <dl class = "row">
+          <dt class = "col-sm-3">Zakazano vreme</dt>
+          <dd class = "col-sm-9">5.10.2023. 18:30</dd>
 
-      
+          <dt class = "col-sm-3">Sadrzaj narudzbine</dt>
+          <dd class = "col-sm-9">
+            <ul id = "sadrzaj">
+              <li>Tiramisu-mala x1</li>
+              <li>Sunka-sir-velika x2</li>
+            </ul>
+          </dd> 
+
+          <dt class = "col-sm-3">Cena</dt>
+          <dd class = "col-sm-9">820</dd>
+
+          <dt class = "col-sm-3">Adresa</dt>
+          <dd class = "col-sm-9">Kralja Milana 12/2</dd>
+
+          <dt class = "col-sm-3>">Status</dt>
+          <select class = "col-sm-2" id = "status" name = "status" onchange="document.getElementById('forma').submit()">
+            <option value = "1">Novo</option>
+            <option value = "2">Prihvaceno</option>
+            <option value = "3">Odbijeno</option>
+            <option value = "4">U pripremi</option>
+            <option value = "5">U dostavi</option>
+            <option value = "6">Zavrseno</option>
+          </select>
+        </dl>
+      </form>
     </main>
 </body>
 </html>
